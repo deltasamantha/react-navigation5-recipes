@@ -4,7 +4,12 @@ import {createStackNavigator} from "@react-navigation/stack";
 import HomeScreen from "../screens/HomeScreen/HomeScreen";
 import ProfileScreen from "../screens/ProfileScreen/ProfileScreen";
 
-const RootStack = createStackNavigator();
+export type RootStackParamList = {
+  Home: undefined;
+  Profile: undefined;
+};
+
+const RootStack = createStackNavigator<RootStackParamList>();
 
 export default function RootNavigator() {
   return (
