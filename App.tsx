@@ -6,17 +6,16 @@
  * @flow strict-local
  */
 
+import "react-native-gesture-handler";
 import React from "react";
-import {View, Text, StatusBar} from "react-native";
-import {styles} from "./App.styles";
+import {StatusBar} from "react-native";
+import RootNavigator from "./navigation/RootNavigator";
 
 const App = () => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
-      <View style={styles.rootContainer}>
-        <Text>Hi React Navigation 5.0</Text>
-      </View>
+      <RootNavigator />
     </>
   );
 };
