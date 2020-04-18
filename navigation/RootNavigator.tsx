@@ -3,6 +3,7 @@ import {NavigationContainer} from "@react-navigation/native";
 import {createStackNavigator} from "@react-navigation/stack";
 import HomeScreen from "../screens/HomeScreen/HomeScreen";
 import ProfileScreen from "../screens/ProfileScreen/ProfileScreen";
+import SplashScreen from "../screens/SplashScreen/SplashScreen";
 
 export type RootStackParamList = {
   Home: undefined;
