@@ -1,9 +1,9 @@
 import React from "react";
 import {View, Text, Button} from "react-native";
-import {styles} from "./AuthScreen.styles";
+import {styles} from "./SigUpScreen.styles";
 import {useStore} from "../../stores/StoreContext";
 
-export default function AuthScreen({navigation}) {
+export default function SigInScreen({navigation}) {
   const {authStore} = useStore();
   const submitForm = () => {
     authStore.authenticate();
@@ -12,7 +12,7 @@ export default function AuthScreen({navigation}) {
   return (
     <View style={styles.rootContainer}>
       <Text>Auth</Text>
-      <Button title="Login" onPress={submitForm} />
+      <Button title="Sign Up" onPress={submitForm} />
     </View>
   );
 }

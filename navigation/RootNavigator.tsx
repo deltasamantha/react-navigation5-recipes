@@ -1,11 +1,10 @@
 import React, {useEffect} from "react";
 import {NavigationContainer} from "@react-navigation/native";
 import {createStackNavigator} from "@react-navigation/stack";
-import HomeScreen from "../screens/HomeScreen/HomeScreen";
-import ProfileScreen from "../screens/ProfileScreen/ProfileScreen";
 import AppNavigator from "./AppNavigator";
+import AuthNavigator from "./AuthNavigator";
 import SplashScreen from "../screens/SplashScreen/SplashScreen";
-import AuthScreen from "../screens/AuthScreen/AuthScreen";
+import SigInScreen from "../screens/SigInScreen/SigInScreen";
 import {useStore} from "../stores/StoreContext";
 import {useObserver} from "mobx-react-lite";
 
@@ -37,7 +36,7 @@ export default function RootNavigator() {
             <>
               <RootStack.Screen
                 name="Auth"
-                component={AuthScreen}
+                component={AuthNavigator}
                 options={{
                   animationTypeForReplace: !authStore.isLoggedIn ? "pop" : "push",
                 }}
