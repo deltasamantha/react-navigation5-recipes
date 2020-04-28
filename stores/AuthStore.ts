@@ -43,7 +43,7 @@ class AuthStore extends BaseStore {
 
   @action
   async authenticate() {
-    this.accessToken = "Dummy access token";
+    this.accessToken = "DUMMY_ACCESS_TOKEN";
     this.isLoggedIn = true;
     await this.updateAsyncStorage(STORAGE_KEY_ACCESS_TOKEN, this.accessToken);
   }
