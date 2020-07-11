@@ -19,12 +19,17 @@ export default function HomeScreen({navigation}) {
     navigation.navigate("Profile", {id: itemId, itemName: `Item ${itemId}`});
   };
 
+  const openModal = () => {
+    navigation.navigate("Modal");
+  };
+
   const BACKGROUND = require("../../assets/images/Background.png");
 
   return (
     <ImageBackground source={BACKGROUND} style={styles.rootContainer}>
       <Text>Home</Text>
       <Button title="Profile" onPress={navigateToProfile} />
+      <Button title="Show modal" onPress={openModal} />
     </ImageBackground>
   );
 }

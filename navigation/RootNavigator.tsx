@@ -4,13 +4,14 @@ import {createStackNavigator} from "@react-navigation/stack";
 import AppNavigator from "./AppNavigator";
 import AuthNavigator from "./AuthNavigator";
 import SplashScreen from "../screens/SplashScreen/SplashScreen";
-import SigInScreen from "../screens/SigInScreen/SigInScreen";
+import ModalScreen from "../screens/ModalScreen/ModalScreen";
 import {useStore} from "../stores/StoreContext";
 import {useObserver} from "mobx-react-lite";
+import MainNavigator from "./MainNavigator";
 
 export type RootStackParamList = {
-  App: undefined;
-  Auth: undefined;
+  Main: undefined;
+  Modal: undefined;
 };
 
 const RootStack = createStackNavigator<RootStackParamList>();
@@ -31,22 +32,10 @@ export default function RootNavigator() {
         <RootStack.Navigator
           screenOptions={{
             headerShown: false,
-          }}>
-          {!authStore.isLoggedIn ? (
-            <>
-              <RootStack.Screen
-                name="Auth"
-                component={AuthNavigator}
-                options={{
-                  animationTypeForReplace: !authStore.isLoggedIn ? "pop" : "push",
-                }}
-              />
-            </>
-          ) : (
-            <>
-              <RootStack.Screen name="App" component={AppNavigator} />
-            </>
-          )}
+          }}
+          mode="modal">
+          <RootStack.Screen name="Main" component={MainNavigator} />
+          <RootStack.Screen name="Modal" component={ModalScreen} />
         </RootStack.Navigator>
       </NavigationContainer>
     );
