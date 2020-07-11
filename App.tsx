@@ -8,15 +8,16 @@
 
 import "react-native-gesture-handler";
 import React from "react";
-import {StatusBar} from "react-native";
+import {StatusBar, ImageBackground} from "react-native";
 import RootNavigator from "./navigation/RootNavigator";
 
 const App = () => {
+  const BACKGROUND = require("./assets/images/Background.png");
   return (
-    <>
+    <ImageBackground source={BACKGROUND} style={{flex: 1}}>
       <StatusBar barStyle="dark-content" />
       <RootNavigator />
-    </>
+    </ImageBackground>
   );
 };
 

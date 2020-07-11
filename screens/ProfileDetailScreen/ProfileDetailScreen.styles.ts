@@ -4,6 +4,6 @@ export const styles = StyleSheet.create({
   rootContainer: {
     flex: 1,
     alignItems: "center",
-    justifyContent: "space-around",
+    justifyContent: "center",
   },
 });
