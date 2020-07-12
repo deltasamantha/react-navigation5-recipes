@@ -23,6 +23,14 @@ export default function HomeScreen({navigation}) {
     navigation.navigate("Modal");
   };
 
+  const openBottomTab = () => {
+    navigation.navigate("Tab");
+  };
+
+  const openTopTab = () => {
+    navigation.navigate("TopTab");
+  };
+
   const BACKGROUND = require("../../assets/images/Background.png");
 
   return (
@@ -30,6 +38,8 @@ export default function HomeScreen({navigation}) {
       <Text>Home</Text>
       <Button title="Profile" onPress={navigateToProfile} />
       <Button title="Show modal" onPress={openModal} />
+      <Button title="Bottom Tab" onPress={openBottomTab} />
+      <Button title="Top Tab" onPress={openTopTab} />
     </ImageBackground>
   );
 }
